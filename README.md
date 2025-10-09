@@ -21,5 +21,6 @@
 ---
 
 ## 🌐 Connect
-[LinkedIn]([https://linkedin.com/in/mariambouja](https://www.linkedin.com/in/mariam-bouja/)) • [GitHub](https://github.com/MariamBouja)
+[LinkedIn]([(https://www.linkedin.com/in/mariam-bouja/)) • [GitHub](https://github.com/MariamBouja)
+
 
