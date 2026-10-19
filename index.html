@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mariam Bouja — RAG Engineer</title>
-<meta name="description" content="AI/RAG engineer building systems that answer strictly from real sources and refuse to guess when they don't know. Portfolio of SRM-SM and AUIBuddy.">
+<meta name="description" content="AI/RAG engineer building systems that answer strictly from real sources and refuse to guess when they don't know. Portfolio: SRM-SM, AUIBuddy, hackathon wins and experience.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -89,7 +89,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 13.5vh;
+    gap: 11vh;
   }
   .rail li{ position: relative; }
   .rail button{
@@ -423,6 +423,10 @@
   .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 20px; }
   .tag-row .chip{ color: var(--muted-2); }
 
+  .repo-link{ margin: 18px 0 0; font-family: var(--mono); font-size: 13px; }
+  .repo-link a{ color: var(--vector); text-decoration: none; }
+  .repo-link a:hover{ text-decoration: underline; }
+
   /* ---------- skills ---------- */
   .skill-groups{ display:grid; grid-template-columns: 1fr 1fr; gap: 30px 40px; }
   @media (max-width: 640px){ .skill-groups{ grid-template-columns: 1fr; } }
@@ -439,7 +443,8 @@
   .contact-list li{ display:flex; align-items:center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--hairline); }
   .contact-list li .k{ font-family: var(--mono); font-size: 12px; color: var(--muted-2); width: 90px; flex-shrink:0; }
   .contact-list li .v{ font-family: var(--mono); font-size: 15px; color: var(--vector); }
-  .contact-list li .v.placeholder{ color: var(--refusal); }
+  .contact-list li .v a{ text-decoration: none; }
+  .contact-list li .v a:hover{ text-decoration: underline; }
   footer{ padding: 40px 0 60px; text-align:center; }
   footer .phrase{ font-family: var(--serif); font-style: italic; color: var(--muted); margin-bottom: 10px; }
   footer .fine{ font-family: var(--mono); font-size: 11.5px; color: var(--muted-2); }
@@ -460,6 +465,7 @@
     <li data-target="demo"><button aria-label="Go to demo"></button><span class="tip">demo</span></li>
     <li data-target="about"><button aria-label="Go to about"></button><span class="tip">about</span></li>
     <li data-target="work"><button aria-label="Go to work"></button><span class="tip">work</span></li>
+    <li data-target="experience"><button aria-label="Go to experience"></button><span class="tip">experience</span></li>
     <li data-target="skills"><button aria-label="Go to skills"></button><span class="tip">skills</span></li>
     <li data-target="contact"><button aria-label="Go to contact"></button><span class="tip">contact</span></li>
   </ol>
@@ -500,6 +506,7 @@
           <button type="button" class="demo-chip" data-q="What languages does she speak?">What languages does she speak?</button>
           <button type="button" class="demo-chip" data-q="How does the SRM-SM chatbot avoid hallucinating?">How does she prevent hallucination?</button>
           <button type="button" class="demo-chip" data-q="What is she building right now?">What's she building right now?</button>
+          <button type="button" class="demo-chip" data-q="Has she won any hackathons?">Has she won any hackathons?</button>
           <button type="button" class="demo-chip" data-q="Does she know React or frontend frameworks?">Does she know React?</button>
         </div>
 
@@ -535,7 +542,7 @@
       <div class="about-block">
         <p>I'm a Computer Science student specializing in Big Data at Al Akhawayn University in Morocco, currently on academic exchange in Helsinki, Finland. My focus is retrieval-augmented generation — systems that answer <strong>strictly from real, retrievable sources</strong>, and say so clearly when they can't. That constraint shapes every decision below it: chunking, embedding choice, similarity thresholds, and what happens when the model would rather guess than admit it doesn't know.</p>
         <p>I debug methodically. AUIBuddy's <code>diagnostics.py</code><span class="cite"><button class="mark" type="button">[src]</button><span class="pop"><span class="path">AUIBuddy/diagnostics.py</span>Standalone script — inspects PDF chunking, hybrid retrieval output, and embedding cosine similarity independently of the chat loop.</span></span> exists because when an answer is wrong, I want to know whether the fault is in extraction, retrieval, or generation — not guess at all three at once.</p>
-        <p>I'm fluent in French, Arabic, and English, and shipped a production chatbot entirely in French for SRM-SM<span class="cite"><button class="mark" type="button">[src]</button><span class="pop"><span class="path">srm-chatbot/chatbot/prompts.py</span>System prompt is written and enforced in French; the assistant answers in whatever language the visitor asks in, French by default.</span></span> — a real regional utility, not a demo client.</p>
+        <p>I'm fluent in French, Arabic, and English, and built SRM-SM's chatbot entirely in French<span class="cite"><button class="mark" type="button">[src]</button><span class="pop"><span class="path">srm-chatbot/chatbot/prompts.py</span>System prompt is written and enforced in French; the assistant answers in whatever language the visitor asks in, French by default.</span></span> — for a real regional utility, not a demo client.</p>
         <p>Outside engineering: endurance running and outdoor movement — disciplined, focused, and it keeps me grounded outside the terminal too.</p>
       </div>
     </div>
@@ -544,7 +551,7 @@
 
 <section id="work">
   <div class="wrap">
-    <p class="section-kicker">work — two real systems</p>
+    <p class="section-kicker">work — real systems</p>
     <h2 class="section-title">What's actually running</h2>
     <p class="lede">No invented metrics. Every number below comes straight out of the code.</p>
 
@@ -552,9 +559,9 @@
     <div class="case" id="srm">
       <div class="case-head">
         <h3>SRM-SM — Assistant virtuel officiel</h3>
-        <span class="status-tag deployed"><span class="sw"></span>Deployed — internship engagement</span>
+        <span class="status-tag deployed"><span class="sw"></span>Delivered — internship, summer 2026</span>
       </div>
-      <p class="case-desc">A French-language RAG chatbot built for SRM-SM (Société Régionale Multiservices Souss-Massa), the operator distributing water, electricity, and sanitation for the Souss-Massa region of Morocco. It answers only from the official site's own content and hands off to a human contact path the moment it isn't sure.</p>
+      <p class="case-desc">A French-language RAG chatbot built for SRM-SM (Société Régionale Multiservices Souss-Massa), the operator distributing water, electricity, and sanitation for the Souss-Massa region of Morocco. It answers only from the official site's own content and hands off to a human contact path the moment it isn't sure. I did the bulk of the build during my internship, and the company is now evaluating it for adoption.</p>
 
       <div class="stat-row">
         <span class="stat"><b class="num">76</b> pages scraped & indexed</span>
@@ -589,6 +596,7 @@
       <div class="tag-row">
         <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">ChromaDB</span><span class="chip">sentence-transformers</span><span class="chip">OpenAI API</span><span class="chip">BeautifulSoup</span>
       </div>
+      <p class="repo-link"><a href="https://github.com/MariamBouja/srm-chatbot" target="_blank" rel="noopener">→ github.com/MariamBouja/srm-chatbot</a></p>
     </div>
 
     <!-- AUIBuddy -->
@@ -624,6 +632,60 @@ print(<span class="c1">f"✅ Cosine similarity between '{q1}' and '{q2}': {cosin
 
       <div class="tag-row">
         <span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">ChromaDB</span><span class="chip">BM25 (rank_bm25)</span><span class="chip">OpenAI API</span>
+      </div>
+      <p class="repo-link"><a href="https://github.com/MariamBouja/AUIBuddy-AI-Mentor" target="_blank" rel="noopener">→ github.com/MariamBouja/AUIBuddy-AI-Mentor</a></p>
+    </div>
+
+    <!-- Spoiler-Free Reading Buddy -->
+    <div class="case" id="sfrb">
+      <div class="case-head">
+        <h3>Spoiler-Free Reading Buddy</h3>
+        <span class="status-tag progress"><span class="sw"></span>In design</span>
+      </div>
+      <p class="case-desc">A reading companion: tell it which chapter you're on, and it answers questions using only what you've read so far. The same grounding rule as my other systems, with one extra constraint: the retrievable corpus shrinks to the reader's position in the book, and anything past it is declined as a spoiler. Every answer cites the passage it came from.</p>
+      <p class="note-box">I'm building this one from scratch on purpose, to go deeper on the engineering around the model: a FastAPI backend, real tests, Docker, and agent-style tool use. Current stage: use-case design (set chapter, ask, cite source, decline spoilers, load book).</p>
+      <div class="tag-row">
+        <span class="chip">FastAPI</span><span class="chip">pytest</span><span class="chip">Docker</span><span class="chip">LLM agents</span>
+      </div>
+      <p class="repo-link"><a href="https://github.com/MariamBouja/Spoiler-Free-Reading-Buddy" target="_blank" rel="noopener">→ github.com/MariamBouja/Spoiler-Free-Reading-Buddy</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="section-kicker">experience</p>
+    <h2 class="section-title">Where I've built, competed, and led</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4>Internships</h4>
+        <ul>
+          <li><b>SRM-SM</b> — AI internship, Agadir · summer 2026. Built the RAG assistant above.</li>
+          <li><b>Attijariwafa Bank</b> — internship · summer 2025</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Hackathons</h4>
+        <ul>
+          <li><b>1st place</b> — HR Reboot Competition, Al Akhawayn University</li>
+          <li><b>Top 4</b> — CIH Bank Hackathon</li>
+          <li><b>Participant</b> — UM6P Hackathon</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Education</h4>
+        <ul>
+          <li><b>B.Sc. Computer Science</b> — Al Akhawayn University, Morocco · expected June 2027</li>
+          <li><b>Exchange semester</b> — University of Helsinki, Finland · autumn 2026</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Leadership & service</h4>
+        <ul>
+          <li><b>Vice Campus Director</b> — Hult Prize AUI</li>
+          <li><b>Service Chairperson</b> — Al Qalb Lkbir association (board)</li>
+          <li><b>Volunteer English tutor</b> — AUI Academy</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -665,7 +727,7 @@ print(<span class="c1">f"✅ Cosine similarity between '{q1}' and '{q2}': {cosin
       <div class="skill-group">
         <h4>Human languages</h4>
         <ul>
-          <li><b>French</b> — production fluency (shipped SRM-SM entirely in French)</li>
+          <li><b>French</b> — professional fluency (built SRM-SM entirely in French)</li>
           <li><b>Arabic</b> — fluent</li>
           <li><b>English</b> — fluent</li>
         </ul>
@@ -680,10 +742,10 @@ print(<span class="c1">f"✅ Cosine similarity between '{q1}' and '{q2}': {cosin
     <h2 class="section-title">Have something that needs to answer only from what's true?</h2>
     <p class="contact-line">Let's talk about it.</p>
     <ul class="contact-list">
-      <li><span class="k">email</span><span class="v placeholder">[ <a href="mailto:maryambouja02@gmail.com">maryambouja02@gmail.com</a> ]</span></li>
-      <li><span class="k">linkedin</span><span class="v placeholder">[ <a href="https://www.linkedin.com/in/mariam-bouja/" target="_blank" rel="noopener">https://www.linkedin.com/in/mariam-bouja/</a> ]</span></li>
-      <li><span class="k">github</span><span class="v placeholder">[ <a href="https://github.com/MariamBouja" target="_blank" rel="noopener">https://github.com/MariamBouja</a> ]</span></li>
-      <li><span class="k">upwork</span><span class="v placeholder">[ <a href="https://www.upwork.com/freelancers/~0157d11df24059e944" target="_blank" rel="noopener">https://www.upwork.com/freelancers/~0157d11df24059e944</a> ]</span></li>
+      <li><span class="k">email</span><span class="v"><a href="mailto:maryambouja02@gmail.com">maryambouja02@gmail.com</a></span></li>
+      <li><span class="k">linkedin</span><span class="v"><a href="https://www.linkedin.com/in/mariam-bouja/" target="_blank" rel="noopener">https://www.linkedin.com/in/mariam-bouja/</a></span></li>
+      <li><span class="k">github</span><span class="v"><a href="https://github.com/MariamBouja" target="_blank" rel="noopener">https://github.com/MariamBouja</a></span></li>
+      <li><span class="k">upwork</span><span class="v"><a href="https://www.upwork.com/freelancers/~0157d11df24059e944" target="_blank" rel="noopener">https://www.upwork.com/freelancers/~0157d11df24059e944</a></span></li>
     </ul>
   </div>
 </section>
@@ -732,8 +794,8 @@ print(<span class="c1">f"✅ Cosine similarity between '{q1}' and '{q2}': {cosin
   var CORPUS = [
     { tag:"Education", text:"Mariam Bouja is a Computer Science student at Al Akhawayn University in Ifrane, Morocco, specializing in Big Data." },
     { tag:"Education", text:"She is currently on academic exchange in Helsinki, Finland." },
-    { tag:"About", text:"She is fluent in French, Arabic, and English, and has shipped a production chatbot entirely in French for a real company." },
-    { tag:"SRM-SM", text:"She built and deployed a RAG chatbot for SRM-SM, Societe Regionale Multiservices Souss-Massa, a real Moroccan water and electricity utility, entirely in French." },
+    { tag:"About", text:"She is fluent in French, Arabic, and English, and built a chatbot entirely in French for a real company." },
+    { tag:"SRM-SM", text:"During her summer 2026 internship she built a RAG chatbot for SRM-SM, Societe Regionale Multiservices Souss-Massa, a real Moroccan water and electricity utility, entirely in French." },
     { tag:"SRM-SM", text:"The SRM-SM chatbot answers only from seventy six scraped pages of the official site and refuses to answer if the best retrieved match falls below a similarity threshold of zero point three five." },
     { tag:"SRM-SM", text:"SRM-SM's agency lookup by region is fully deterministic, a structured JSON table lookup with no LLM call at all, so there is zero hallucination risk on addresses." },
     { tag:"SRM-SM", text:"The SRM-SM chatbot checks whether a job posting or recruitment notice is closed before answering, so it never implies a closed recruitment is still open." },
@@ -745,6 +807,9 @@ print(<span class="c1">f"✅ Cosine similarity between '{q1}' and '{q2}': {cosin
     { tag:"About", text:"Outside of engineering she does endurance running and outdoor movement, which keeps her disciplined and focused and grounded outside the terminal." },
     { tag:"About", text:"Her standard for her own work is high standards, zero fluff." },
     { tag:"Skills", text:"She works in Python using LangChain, ChromaDB, sentence transformers, Streamlit, BeautifulSoup, and the OpenAI API." },
+    { tag:"Experience", text:"She won first place at the HR Reboot Competition at Al Akhawayn University and placed in the top four at the CIH Bank Hackathon." },
+    { tag:"Experience", text:"Her internships were at SRM-SM in Agadir in summer 2026 and at Attijariwafa Bank in summer 2025." },
+    { tag:"Projects", text:"She is designing Spoiler-Free Reading Buddy, a reading companion that answers questions using only the chapters a reader has finished, built with FastAPI, tests, and Docker." },
     { tag:"Contact", text:"You can reach her by email or LinkedIn through the contact section of this site." }
   ];
 
@@ -766,7 +831,9 @@ print(<span class="c1">f"✅ Cosine similarity between '{q1}' and '{q2}': {cosin
     [/\b(hallucinat\w*|accurate|wrong|made?\s?up|lying|trust)\b/, "threshold refuses similarity"],
     [/\b(hobby|hobbies|outside|free time)\b/, "running endurance outdoor grounded"],
     [/\bwhy\b.*\b(rag|retrieval|grounded?)\b/, "philosophy production ready systems"],
-    [/\b(building|build|working|currently|progress)\b/, "auibuddy progress catalog majors"]
+    [/\b(building|build|working|currently|progress)\b/, "auibuddy progress catalog majors"],
+    [/\b(hackathon|hackathons|won|win|award|awards|competition|prize)\b/, "hackathon place competition top"],
+    [/\b(intern|internship|internships|experience|job|worked)\b/, "internship srm attijariwafa summer"]
   ];
 
   function expandQuery(q){
